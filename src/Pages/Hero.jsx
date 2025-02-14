@@ -8,7 +8,7 @@ function Hero() {
             <div className="container" >
                 <div className="hero " id="home">
                     <div className="row">
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 row justify-content-center">
                             <img src={profile} alt="" />
                         </div>
                         <div className="col-lg-6 py-5 text-center">
