@@ -35,7 +35,7 @@ function Footer() {
             <div className="col-lg-6 col-md-1 ">
               <div className=" icons ">
                 <Link to=""> <i className="bi bi-facebook text-light fs-1 me-4" /></Link>
-                <Link to="https://www.instagram.com"><i className="bi bi-instagram text-light fs-1 me-4" /></Link>
+                <Link to="https://github.com/subhadra12"><i className="bi bi-github text-light fs-1 me-4" /></Link>
                 <Link to="www.linkedin.com/in/subhadra-dahal-83671a333"><i className="bi bi-linkedin text-light fs-1 me-4" /></Link>
               </div>
             </div>
