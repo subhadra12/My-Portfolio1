@@ -20,60 +20,32 @@ function About() {
             </div>
           </div>
           <div className="skills">
-            <h2>Skills</h2>
-            <div className="row skill">
-              <div className="col-lg-2 col-md-3 col-sm-12"> <p>HTML</p></div>
-              <div className="col-lg-10 col-md-9 col-sm-12">
-                <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100}>
-                  <div className="progress-bar" style={{width:"75%", background:"#1197b9"}} />
-                </div>
-              </div>
-            </div>
-            <div className="row skill">
-              <div className="col-lg-2 col-md-3 col-sm-12"> <p> CSS</p></div>
-              <div className="col-lg-10 col-md-9 col-sm-12">
-                <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100}>
-                  <div className="progress-bar" style={{width:"75%", background:"#1197b9"}} />
-                </div>
-              </div>
-            </div>
-            <div className="row skill">
-              <div className="col-lg-2 col-md-3 col-sm-12"> <p>JavaScript</p></div>
-              <div className="col-lg-10 col-md-9 col-sm-12"> 
-              <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow={50} aria-valuemin={0} aria-valuemax={100}>
-                  <div className="progress-bar" style={{width:"50%", background:"#1197b9"}} />
-                </div>
-              </div>
-            </div>
-            <div className="row skill">
-              <div className="col-lg-2 col-md-3 col-sm-12"> <p>Bootstrap</p></div>
-              <div className="col-lg-10 col-md-9 col-sm-12"> 
-              <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100}>
-                  <div className="progress-bar" style={{width:"75%", background:"#1197b9"}} />
-                </div>
-              </div>
-            </div>
-            <div className="row skill">
-              <div className="col-lg-2 col-md-3 col-sm-12"> <p>React JS</p></div>
-              <div className="col-lg-10 col-md-9 col-sm-12">
-              <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow={70} aria-valuemin={0} aria-valuemax={100}>
-                  <div className="progress-bar" style={{width:"70%", background:"#1197b9"}} />
-                </div>
-              </div>
-            </div>
-            <div className="row skill">
-              <div className="col-lg-2 col-md-3 col-sm-12"> <p>Responsive Design</p></div>
-              <div className="col-lg-10 col-md-9 col-sm-12">
-              <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow={65} aria-valuemin={0} aria-valuemax={100}>
-                  <div className="progress-bar" style={{width:"65%", background:"#1197b9"}} />
-                </div>
-              </div>
-            </div>
-          </div>
+          <h2>Skills</h2>
+          {renderSkill('HTML', 75)}
+          {renderSkill('CSS', 75)}
+          {renderSkill('JavaScript', 50)}
+          {renderSkill('Bootstrap', 75)}
+          {renderSkill('React JS', 70)}
+          {renderSkill('Responsive Design', 65)}
+        </div>
         </div>
       </div>
     </>
   )
 }
+
+// Reusable Skill Row Component
+const renderSkill = (name, value) => (
+  <div className="row skill">
+    <div className="col-lg-2 col-md-3 col-sm-12">
+      <p>{name}</p>
+    </div>
+    <div className="col-lg-10 col-md-9 col-sm-12">
+      <div className="progress" role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={100}>
+        <div className="progress-bar" style={{ width: `${value}%`, background: "#1197b9" }} />
+      </div>
+    </div>
+  </div>
+)
 
 export default About

@@ -1,59 +1,75 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router'
 
-function Footer() {
-  const [isVisible, setIsVisible] = useState(false);
+function ScrollToTopButton() {
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
+  return (
+    <div className="scroll-top" onClick={scrollTop} role="button" aria-label="Scroll to top">
+      <i className="bi bi-arrow-up fs-4"></i>
+    </div>
+  );
+}
+
+function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
+
   const listenToScroll = () => {
-    let heightToHidden = 250;
+    const heightToHidden = 250;
     const windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
 
-    windowScroll > heightToHidden ? setIsVisible(true) : setIsVisible(false);
-  }
+    if (windowScroll > heightToHidden) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
   useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
-  });
+    window.addEventListener('scroll', listenToScroll);
+
+    // Cleanup event listener on unmount
+    return () => window.removeEventListener('scroll', listenToScroll);
+  }, []);
+
   return (
     <>
       <div className="container">
         <div className="footer">
-          <div className="row ">
-            <div className="col-lg-6 col-md-1">
+          <div className="row">
+          <hr />
+            <div className="col-lg-6 col-md-12">
               <div className="logo">
-                <Link to="/" className='text-decoration-none'>
+                <Link to="/" className="text-decoration-none">
                   <h1>Subhadra</h1>
                 </Link>
               </div>
-              <p>I am a frontend developer with a passion for building responsive, user-friendly websites.</p>
             </div>
-            <div className="col-lg-6 col-md-1 ">
-              <div className=" icons ">
-                <Link to=""> <i className="bi bi-facebook text-light fs-1 me-4" /></Link>
-                <Link to="https://github.com/subhadra12"><i className="bi bi-github text-light fs-1 me-4" /></Link>
-                <Link to="www.linkedin.com/in/subhadra-dahal-83671a333"><i className="bi bi-linkedin text-light fs-1 me-4" /></Link>
+            <div className="col-lg-6 col-md-12">
+              <div className="icons">
+                <Link to="#" aria-label="Facebook">
+                  <i className="bi bi-facebook text-light fs-2 me-4" />
+                </Link>
+                <Link to="https://github.com/subhadra12" aria-label="GitHub">
+                  <i className="bi bi-github text-light fs-2 me-4" />
+                </Link>
+                <Link to="https://www.linkedin.com/in/subhadra-dahal-83671a333" aria-label="LinkedIn">
+                  <i className="bi bi-linkedin text-light fs-2 me-4" />
+                </Link>
               </div>
             </div>
-            <hr />
-            <div className="footer-bottom text-center">
-              <p>© 2025 Subhadra Dahal. All rights reserved.</p>
-            </div>
           </div>
+          
         </div>
       </div>
- {/*scroll top*/}
- {isVisible && (
-        <div className="scroll-top" onClick={scrollTop}>
-          <i className='bi bi-arrow-up'></i>
-        </div>
-      )}
+      {isVisible && <ScrollToTopButton />}
     </>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
