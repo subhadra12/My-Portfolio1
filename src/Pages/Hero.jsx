@@ -17,7 +17,7 @@ function Hero() {
                             <p>Frontend Developer | Passionate about creating beautiful Websites</p>
                             <div className="hero-action justify-content-center">
                             <Link to="/contact" className="button">Connect with me</Link>
-                            <Link to="/Subhadra-Dahal-cv.pdf" target="_blank" rel="noopener noreferrer" className="hero-resume text-light">View my resume</Link>
+                            <Link to="/my-cv.pdf" target="_blank" rel="noopener noreferrer" className="hero-resume text-light">View my resume</Link>
 
                             </div>
                         </div>

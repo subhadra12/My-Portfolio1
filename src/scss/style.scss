@@ -30,7 +30,7 @@
   }
 
   h1 {
-    font-family: litita, sans-serif;
+    font-family: litita;
     font-weight: 600;
     font-size: 40px;
     background: var(--brand, linear-gradient(45deg, #1197b9, #12b5d9));
@@ -80,6 +80,8 @@
   font-size: 24px;
   font-weight: 500;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 
   &:hover {
     transform: scale(1.05);
@@ -103,7 +105,7 @@
 
   h1 {
     text-align: center;
-    font-size: clamp(28px, 6vw, 50px);
+    font-size: clamp(28px, 4vw, 50px);
     font-weight: 600;
 
     span {
@@ -154,8 +156,10 @@
   }
 
   .para {
-    font-size: 24px;
-    text-align: justify;
+    font-size: 20px;
+  text-align: justify;
+  line-height: 1.6;
+  padding: 10px 15px;
   }
 
   .skills {
@@ -180,7 +184,7 @@
     }
 
     p {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 500;
       margin: 0;
     }
@@ -391,7 +395,7 @@
   }
 
   h1 {
-    font-family: litita, sans-serif;
+    font-family: litita;
     font-weight: 600;
     font-size: 40px;
     background: var(--brand);
@@ -414,6 +418,7 @@
     justify-content: end;
     gap: 10px;
     align-items: center;
+    
   }
 }
 
@@ -479,6 +484,7 @@
   .hero-resume {
     margin-top: 10px;
     font-size: 18px;
+    padding:8px 8px;
   }
 
   .hero {
@@ -585,7 +591,4 @@ hr{
   .footer-bottom {
     font-size: 16px;
   }
-}
-
-@media (max-width: 992px) {
 }
